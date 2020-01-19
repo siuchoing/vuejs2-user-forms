@@ -10,17 +10,17 @@
                         <input
                                 type="text"
                                 id="email"
-                                v-model.lazy="userData.email"
+                                v-model="userData.email"
                                 class="form-control">
-                        {{ userData.email }}
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input
                                 type="password"
                                 id="password"
-                                v-model="userData.password"
+                                v-model.lazy="userData.password"
                                 class="form-control">
+                        {{ userData.password }}
                     </div>
                     <div class="form-group">
                         <label for="age">Age</label>
