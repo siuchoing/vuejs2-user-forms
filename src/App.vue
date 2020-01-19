@@ -5,14 +5,7 @@
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                     <h1>File a Complaint</h1>
                     <hr>
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" v-model="userData.firstName">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" v-model="userData.lastName">
-                    </div>
+                    <app-full-name v-model="userData.fullName"></app-full-name>
                     <div class="form-group">
                         <label for="email">Mail</label>
                         <!-- Aim: build your own input, build a switch component for toggle between on and off -->
@@ -131,7 +124,7 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Full Name: {{ userData.firstName }} {{ userData.lastName }}</p>
+                        <p>Full Name: {{ userData.fullName }}</p>
                         <p>Mail: {{ userData.email }}</p>
                         <p>Password: {{ userData.password }}</p>
                         <p>Age: {{ userData.age }}</p>
@@ -152,13 +145,13 @@
 
 <script>
     import Switch from './Switch.vue';
+    import FullName from './FullName.vue';
 
     export default {
         data () {
             return {
                 userData: {
-                    firstName: '',
-                    lastName: '',
+                    fullName: 'Max Tominsaker',
                     email: '',
                     password: '',
                     age: 27
@@ -178,7 +171,8 @@
             }
         },
         components: {
-            appSwitch: Switch
+            appSwitch: Switch,
+            appFullName: FullName
         }
     }
 </script>
