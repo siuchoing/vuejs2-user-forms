@@ -51,12 +51,14 @@
                             <input
                                     type="checkbox"
                                     id="sendmail"
+                                    v-model="sendMail"
                                     value="SendMail"> Send Mail
                         </label>
                         <label for="sendInfomail">
                             <input
                                     type="checkbox"
                                     id="sendInfomail"
+                                    v-model="sendMail"
                                     value="SendInfoMail"> Send Infomail
                         </label>
                     </div>
@@ -69,12 +71,14 @@
                         <input
                                 type="radio"
                                 id="male"
+                                v-model="gender"
                                 value="Male"> Male
                     </label>
                     <label for="female">
                         <input
                                 type="radio"
                                 id="female"
+                                v-model="gender"
                                 value="Female"> Female
                     </label>
                 </div>
@@ -112,9 +116,9 @@
                         <p style="white-space: pre">Message: {{ message }}</p>
                         <p><strong>Send Mail?</strong></p>
                         <ul>
-                            <li></li>
+                            <li v-for="item in sendMail">{{ item }}</li>
                         </ul>
-                        <p>Gender:</p>
+                        <p>Gender: {{ gender }}</p>
                         <p>Priority:</p>
                         <p>Switched:</p>
                     </div>
@@ -133,7 +137,9 @@
                     password: '',
                     age: 27
                 },
-                message: 'A new Text'
+                message: 'A new Text',
+                sendMail: [],
+                gender: 'Male'
             }
         }
     }
