@@ -7,10 +7,14 @@
                     <hr>
                     <div class="form-group">
                         <label for="email">Mail</label>
+                        <!-- Aim: build your own input, build a switch component for toggle between on and off -->
+                        <!-- To pass a value into our component by :value as prop named value -->
+                        <!-- To emit an event called input to allow v-model to react to that -->
                         <input
                                 type="text"
                                 id="email"
-                                v-model="userData.email"
+                                :value="userData.email"
+                                @input="userData.email = $event.target.value"
                                 class="form-control">
                     </div>
                     <div class="form-group">
