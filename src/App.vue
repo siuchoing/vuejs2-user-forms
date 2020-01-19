@@ -6,6 +6,14 @@
                     <h1>File a Complaint</h1>
                     <hr>
                     <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" v-model="userData.firstName">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" v-model="userData.lastName">
+                    </div>
+                    <div class="form-group">
                         <label for="email">Mail</label>
                         <!-- Aim: build your own input, build a switch component for toggle between on and off -->
                         <!-- To pass a value into our component by :value as prop named value -->
@@ -123,6 +131,7 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
+                        <p>Full Name: {{ userData.firstName }} {{ userData.lastName }}</p>
                         <p>Mail: {{ userData.email }}</p>
                         <p>Password: {{ userData.password }}</p>
                         <p>Age: {{ userData.age }}</p>
@@ -148,6 +157,8 @@
         data () {
             return {
                 userData: {
+                    firstName: '',
+                    lastName: '',
                     email: '',
                     password: '',
                     age: 27
